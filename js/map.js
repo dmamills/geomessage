@@ -1,28 +1,32 @@
 var app = angular.module("geomsg", ["firebase"]);
 app.controller('GeoCtrl',function($scope,$firebase) {
 
-    var ref = 'https://info3069-map.firebaseio.com/',
-        mapEl = document.getElementById('map-canvas'),
+    /* Google map stuff */
+    var mapEl = document.getElementById('map-canvas'),
         map,marker,infoBox,
         mapOptions = {
           center: new google.maps.LatLng(42.9876432, -81.2516959),
           zoom: 15
         };
 
-
     google.maps.event.addDomListener(window, 'load',function(){
         map = new google.maps.Map(mapEl,mapOptions);
     });
 
+
+    var ref = 'https://info3069-map.firebaseio.com/';
     $scope.people = $firebase(new Firebase(ref));
     $scope.nick = '';
     $scope.msg = '';
 
-    $scope.click = function(idx) {
+    /* Event for when a person's name is clicked*/
+    $scope.userClick = function(idx) {
 
-        //clear map,
+        //clear marker and infobox
         if(marker) marker.setMap(null);
         if(infoBox) infoBox = null;
+
+        //get person and their
         var person = $scope.people.$getIndex(idx)[idx];
         var p = $scope.people[person],
             nick = p['nick'],
@@ -42,14 +46,12 @@ app.controller('GeoCtrl',function($scope,$firebase) {
           content:'<div><h2>'+nick+'</h2><h5>'+msg+'</div>'
         });
 
-
         //zoom to marker
         map.setCenter(latLng);
         infoBox.open(map,marker);
-    }
+    };
 
-
-
+    /* Add a person's geomessage */
     $scope.add = function() {
         if($scope.nick === '' && $scope.msg === '') return;
         if(navigator.geolocation) {
@@ -67,6 +69,8 @@ app.controller('GeoCtrl',function($scope,$firebase) {
           },null);
         }
     };
+
+    /* Scroll functions */
     $scope.scroll = function() { window.scrollTo(0,340); };
     $scope.top = function() { window.scrollTo(0,0); };
 });

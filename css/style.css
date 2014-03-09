@@ -144,3 +144,21 @@ body {
 .footer a:hover {
     color:#7f8c8d;
 }
+
+@media only screen and (max-device-width: 480px) {
+    .header {
+        background: none;
+    }
+
+    .people-list {
+        border-bottom:2px solid #01162B;
+    }
+
+    .footer p {
+        line-height:1em;
+    }
+
+    .footer p:nth-child(1) {
+        padding-top:0;
+    }
+}

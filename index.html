@@ -57,13 +57,14 @@
                 <div class="col-sm-2 col-xs-12">
                     <div class="people-list">
                         <h1>PEOPLE</h1>
+                        <div class="help">
+                            <p>Select a person to see their message</p>
+                        </div>
                         <ul id="user-list">
-                            <li ng-repeat="person in people" ng-click="click($index)">{{ person.nick }}</li>
+                            <li ng-repeat="person in people" ng-click="userClick($index)">{{ person.nick }}</li>
                         </ul>
                     </div>
-                    <div class="help">
-                        <p>Select a person to see their message</p>
-                    </div>
+
                 </div>
                 <div class="col-sm-8 col-xs-12">
                     <div class="map-container">
