@@ -6,19 +6,19 @@
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
-    <title>Map'em</title>
+    <title>GeoMessenger</title>
 </head>
-    <body>
-        <div class="container">
+    <body ng-app="geomsg">
+        <div class="container" ng-controller="GeoCtrl">
             <div class="row">
                 <div class="col-xs-12">
                     <div class="header block">
-                        <h1>Map'em</h2>
+                        <h1>GeoMessenger</h2>
                         <div class="content">
                             <div><i class="fa fa-compass fa-3x"> </i></div>
                             <p>Share a message from your location in realtime</p>
                         </div>
-                        <div class="down"><i id="scrollBtn" class="fa fa-chevron-down fa-4x"> </i></div>
+                        <div class="down"><i ng-click="scroll()" class="fa fa-chevron-down fa-4x"> </i></div>
                     </div>
                 </div>
             </div>
@@ -33,17 +33,17 @@
                             <div class="inputs">
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <input type="text" class="form-control" placeholder="Name..." name="name" id="name">
+                                        <input type="text" class="form-control" placeholder="Name..." ng-model="nick">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Message..." name="message" id="message">
+                                            <input type="text" class="form-control" placeholder="Message..." ng-model="msg">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <button type"button" class="btn btn-primary btn-lg" id="addBtn">Add to map</button>
+                                        <button type"button" class="btn btn-primary btn-lg" ng-click="add()">Add to map</button>
                                     </div>
                                 </div>
                             </div>
@@ -58,8 +58,11 @@
                     <div class="people-list">
                         <h1>PEOPLE</h1>
                         <ul id="user-list">
-
+                            <li ng-repeat="person in people" ng-click="click($index)">{{ person.nick }}</li>
                         </ul>
+                    </div>
+                    <div class="help">
+                        <p>Select a person to see their message</p>
                     </div>
                 </div>
                 <div class="col-sm-8 col-xs-12">
@@ -72,18 +75,20 @@
 
             <!-- Footer -->
             <div class="row">
-                <div class="col-xs-12">
+                <div class="col-xs-10">
                     <div class="footer">
+                        <p><i ng-click="top()" class="fa fa-chevron-up fa-2x"> </i></p>
                         <p>Made by <a href="http://yomills.com">Daniel Mills</a> for INFO3069 Web Applications and Technologies</p>
-                        <p>Using <a href="http://firebase.com">Firebase</a>,<a href="http://getbootstrap.com">Bootstrap</a>, and <a href="#">Google Maps</a>.</p>
-
+                        <p>Using <a href="http://firebase.com">Firebase</a>,<a href="#">Angularjs</a>,<a href="http://getbootstrap.com">Bootstrap</a>, and <a href="#">Google Maps</a>.</p>
                     </div>
                 </div>
             </div>
             <!-- End Footer-->
         </div>
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvXwRM5dzdA5y5UCi7EepAeMQ_e67jmc4&amp;sensor=true"></script>
-        <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.6/firebase.js'></script>
-        <script type="text/javascript" src="/js/map.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.1/angular.min.js"></script>
+        <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+        <script src="https://cdn.firebase.com/libs/angularfire/0.5.0/angularfire.min.js"></script>
+        <script src="/js/map.js"></script>
     </body>
 </html>

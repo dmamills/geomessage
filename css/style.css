@@ -123,6 +123,7 @@ body {
 
 .footer p {
     padding-left:25px;
+    line-height:0.5em;
 }
 
 .footer p:nth-child(1) {
@@ -133,6 +134,11 @@ body {
     color:#95a5a6;
     text-decoration:none;
     font-size:16px;
+}
+
+.footer i:hover {
+    color:#7f8c8d;
+    transition: all 0.5s ease-out;
 }
 
 .footer a:hover {
