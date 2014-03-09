@@ -107,7 +107,7 @@ body {
 }
 
 .people-list ul {
-    border: 2px solid #01162B;
+    padding-left:0px;
     list-style-type:none;
 }
 
@@ -145,9 +145,32 @@ body {
     color:#7f8c8d;
 }
 
+/*
+.info-wrap {
+  background-color:#95a5a6;
+}
+.info-wrap .head {
+  background-color:#34495e;
+  color:#ecf0f1;
+  border-bottom:2px solid #01162B;
+}
+.info-wrap .head h1 {
+  padding-left:10px;
+  padding-top:2px;
+}
+
+.info-wrap .content {
+  padding-left:10px;
+}
+*/
+
 @media only screen and (max-device-width: 480px) {
     .header {
         background: none;
+    }
+
+    .row .block:nth-child(1) {
+        padding-bottom:20px;
     }
 
     .people-list {
@@ -156,6 +179,10 @@ body {
 
     .footer p {
         line-height:1em;
+    }
+
+    .down {
+        display:none;
     }
 
     .footer p:nth-child(1) {

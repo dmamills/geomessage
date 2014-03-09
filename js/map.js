@@ -18,7 +18,8 @@ app.controller('GeoCtrl',function($scope,$firebase) {
     $scope.people = $firebase(new Firebase(ref));
     $scope.nick = '';
     $scope.msg = '';
-
+    $scope.number = 0
+    
     /* Event for when a person's name is clicked*/
     $scope.userClick = function(idx) {
 
@@ -43,7 +44,7 @@ app.controller('GeoCtrl',function($scope,$firebase) {
 
         //create info box
         infoBox = new google.maps.InfoWindow({
-          content:'<div><h2>'+nick+'</h2><h5>'+msg+'</div>'
+          content:'<div class="info-wrap"><div class="head"><h1>'+nick+'</h1></div><div class="content"><p>'+msg+'</p></div></div>'
         });
 
         //zoom to marker

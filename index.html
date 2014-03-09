@@ -58,7 +58,8 @@
                     <div class="people-list">
                         <h1>PEOPLE</h1>
                         <div class="help">
-                            <p>Select a person to see their message</p>
+                            <p>Select a person to see their message</br>
+                                Number of messages recorded: {{ people.$getIndex(0).length }}</p>
                         </div>
                         <ul id="user-list">
                             <li ng-repeat="person in people" ng-click="userClick($index)">{{ person.nick }}</li>
