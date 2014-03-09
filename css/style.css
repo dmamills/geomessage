@@ -1,0 +1,140 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
+
+/*
+    Colors:
+    Font white:#ecf0f1
+    Block blue: #34495e
+    Block grey: #95a5a6
+*/
+
+body {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.container {
+    padding-left:0;
+    padding-right:0;
+    width:100%;
+}
+
+.block {
+    min-height:250px;
+    border-bottom:2px solid #01162B;
+}
+
+.header {
+    background: url('/img/bg.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color:#ecf0f1;
+    padding-top:20px;
+    min-height:300px;
+    text-align:center;
+}
+
+.header h1 {
+   font-size:42px;
+   font-weight:700;
+}
+
+.header .content {
+    padding-top:20px;
+    font-size:32px;
+}
+
+.down {
+    margin-top:25px;
+}
+
+.down i:hover {
+    color:#7f8c8d;
+    transition: all 0.5s ease-out;
+}
+
+.block.info {
+    background-color:#34495e;
+}
+
+.info .content {
+    padding-top:25px;
+    text-align:center;
+    color:#ECF0F1;
+    font-size:32px;
+}
+
+.info .inputs {
+    color:#000;
+}
+
+.inputs button {
+    width:100%;
+}
+.buttons {
+    padding-top:20px;
+}
+
+#searchBtn {
+    margin-left:25%;
+}
+
+.map-container {
+    min-height:400px;
+
+}
+#map-canvas {
+    border-left:2px solid  #01162B;
+    border-right:2px solid #01162B;
+    min-height:400px;
+}
+
+
+.container .row:nth-child(even) {
+    background-color:#34495e;
+}
+
+.container .row:nth-child(odd) {
+    background-color:#95a5a6;
+}
+
+.inputs .row .col-xs-12 {
+    background-color:#34495e;
+}
+
+.people-list {
+    padding-left:20px;
+}
+
+.people-list ul {
+    border: 2px solid #01162B;
+    list-style-type:none;
+}
+
+.people-list ul li:hover {
+    background-color:#ECF0F1;
+    cursor:pointer;
+}
+
+.footer {
+    min-height:75px;
+    color:#ECF0F1;
+}
+
+.footer p {
+    padding-left:25px;
+}
+
+.footer p:nth-child(1) {
+    padding-top:50px;
+}
+
+.footer a {
+    color:#95a5a6;
+    text-decoration:none;
+    font-size:16px;
+}
+
+.footer a:hover {
+    color:#7f8c8d;
+}

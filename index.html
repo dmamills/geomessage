@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <title>Map'em</title>
+</head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="header block">
+                        <h1>Map'em</h2>
+                        <div class="content">
+                            <div><i class="fa fa-compass fa-3x"> </i></div>
+                            <p>Share a message from your location in realtime</p>
+                        </div>
+                        <div class="down"><i id="scrollBtn" class="fa fa-chevron-down fa-4x"> </i></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Input section -->
+            <div class="row block">
+                <div class="col-xs-12">
+                    <div class="info">
+                        <div class="col-xs-8 col-xs-offset-2">
+                            <div class="content">
+                                <p>Please enter your name and let us put you on the map.</p>
+                            </div>
+                            <div class="inputs">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <input type="text" class="form-control" placeholder="Name..." name="name" id="name">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                            <input type="text" class="form-control" placeholder="Message..." name="message" id="message">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <button type"button" class="btn btn-primary btn-lg" id="addBtn">Add to map</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End input section -->
+            <!-- Start Map Section -->
+            <div class="row block">
+                <div class="col-sm-2 col-xs-12">
+                    <div class="people-list">
+                        <h1>PEOPLE</h1>
+                        <ul id="user-list">
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-8 col-xs-12">
+                    <div class="map-container">
+                        <div id="map-canvas"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Map Section -->
+
+            <!-- Footer -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="footer">
+                        <p>Made by <a href="http://yomills.com">Daniel Mills</a> for INFO3069 Web Applications and Technologies</p>
+                        <p>Using <a href="http://firebase.com">Firebase</a>,<a href="http://getbootstrap.com">Bootstrap</a>, and <a href="#">Google Maps</a>.</p>
+
+                    </div>
+                </div>
+            </div>
+            <!-- End Footer-->
+        </div>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvXwRM5dzdA5y5UCi7EepAeMQ_e67jmc4&amp;sensor=true"></script>
+        <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.6/firebase.js'></script>
+        <script type="text/javascript" src="/js/map.js"></script>
+    </body>
+</html>
