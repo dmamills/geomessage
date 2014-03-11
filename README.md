@@ -7,6 +7,6 @@ A school project, "the goal is to create a real mapping application based on the
 Messages and location are stored in firebase in this structure
 ![firebase structure](http://i.imgur.com/fhTabks.png)
 
-And then retrieved using [angularfire](https://www.firebase.com/quickstart/angularjs.html) to bound to the page.
+And then retrieved using [angularfire](https://www.firebase.com/quickstart/angularjs.html) and bound to the page.
 
 [Live Demo](https://info3069-map.firebaseapp.com)

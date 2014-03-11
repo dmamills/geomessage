@@ -48,11 +48,6 @@ body {
     margin-top:25px;
 }
 
-.down i:hover {
-    color:#7f8c8d;
-    transition: all 0.5s ease-out;
-}
-
 .block.info {
     background-color:#34495e;
 }
@@ -67,6 +62,8 @@ body {
 .info .inputs {
     color:#000;
 }
+
+.inputs label { color:#FFF; font-weight:100;}
 
 .inputs button {
     width:100%;
@@ -144,25 +141,6 @@ body {
 .footer a:hover {
     color:#7f8c8d;
 }
-
-/*
-.info-wrap {
-  background-color:#95a5a6;
-}
-.info-wrap .head {
-  background-color:#34495e;
-  color:#ecf0f1;
-  border-bottom:2px solid #01162B;
-}
-.info-wrap .head h1 {
-  padding-left:10px;
-  padding-top:2px;
-}
-
-.info-wrap .content {
-  padding-left:10px;
-}
-*/
 
 @media only screen and (max-device-width: 480px) {
     .header {

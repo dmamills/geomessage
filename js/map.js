@@ -13,13 +13,12 @@ app.controller('GeoCtrl',function($scope,$firebase) {
         map = new google.maps.Map(mapEl,mapOptions);
     });
 
-
     var ref = 'https://info3069-map.firebaseio.com/';
     $scope.people = $firebase(new Firebase(ref));
     $scope.nick = '';
     $scope.msg = '';
-    $scope.number = 0
-    
+    $scope.number = 0;
+
     /* Event for when a person's name is clicked*/
     $scope.userClick = function(idx) {
 
@@ -27,16 +26,12 @@ app.controller('GeoCtrl',function($scope,$firebase) {
         if(marker) marker.setMap(null);
         if(infoBox) infoBox = null;
 
-        //get person and their
+        //get person and their information
         var person = $scope.people.$getIndex(idx)[idx];
-        var p = $scope.people[person],
-            nick = p['nick'],
-            msg =  p['msg'],
-            lat =  p['lat'],
-            lon =  p['lon'];
+        var p = $scope.people[person];
 
         //add new marker
-        var latLng = new google.maps.LatLng(lat,lon);
+        var latLng = new google.maps.LatLng(p.lat,p.lon);
         marker = new google.maps.Marker({
             position:latLng,
             map:map,
@@ -44,7 +39,7 @@ app.controller('GeoCtrl',function($scope,$firebase) {
 
         //create info box
         infoBox = new google.maps.InfoWindow({
-          content:'<div class="info-wrap"><div class="head"><h1>'+nick+'</h1></div><div class="content"><p>'+msg+'</p></div></div>'
+          content:'<div class="info-wrap"><div class="head"><h1>'+p.nick+'</h1></div><div class="content"><p>'+p.msg+'</p></div></div>'
         });
 
         //zoom to marker
@@ -71,7 +66,5 @@ app.controller('GeoCtrl',function($scope,$firebase) {
         }
     };
 
-    /* Scroll functions */
-    $scope.scroll = function() { window.scrollTo(0,340); };
     $scope.top = function() { window.scrollTo(0,0); };
 });

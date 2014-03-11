@@ -18,7 +18,7 @@
                             <div><i class="fa fa-compass fa-3x"> </i></div>
                             <p>Share a message from your location in realtime</p>
                         </div>
-                        <div class="down"><i ng-click="scroll()" class="fa fa-chevron-down fa-4x"> </i></div>
+                        <div class="down"><i class="fa fa-chevron-down fa-4x"> </i></div>
                     </div>
                 </div>
             </div>
@@ -33,12 +33,14 @@
                             <div class="inputs">
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <input type="text" class="form-control" placeholder="Name..." ng-model="nick">
+                                        <label for="name">Name</label>
+                                        <input type="text" class="form-control" name="name" placeholder="Name..." ng-model="nick">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Message..." ng-model="msg">
+                                        <label for="message">Message</label>
+                                            <input type="text" class="form-control" name="message" placeholder="Message..." ng-model="msg">
                                     </div>
                                 </div>
                                 <div class="row">
@@ -58,7 +60,7 @@
                     <div class="people-list">
                         <h1>PEOPLE</h1>
                         <div class="help">
-                            <p>Select a person to see their message</br>
+                            <p><strong>Select a person to see their message</strong></br>
                                 Number of messages recorded: {{ people.$getIndex(0).length }}</p>
                         </div>
                         <ul id="user-list">
@@ -81,7 +83,7 @@
                     <div class="footer">
                         <p><i ng-click="top()" class="fa fa-chevron-up fa-2x"> </i></p>
                         <p>Made by <a href="http://yomills.com">Daniel Mills</a> for INFO3069 Web Applications and Technologies</p>
-                        <p>Using <a href="http://firebase.com">Firebase</a>,<a href="#">Angularjs</a>,<a href="http://getbootstrap.com">Bootstrap</a>, and <a href="#">Google Maps</a>.</p>
+                        <p>Using <a href="http://firebase.com">Firebase</a>, <a href="http://angularjs.org/">Angularjs</a>, <a href="http://getbootstrap.com">Bootstrap</a>, and <a href="https://developers.google.com/maps/">Google Maps</a>.</p>
                     </div>
                 </div>
             </div>
